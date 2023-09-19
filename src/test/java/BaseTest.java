@@ -1,5 +1,5 @@
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
+import services.ReqresIn;
 
 public class BaseTest {
     @BeforeClass
