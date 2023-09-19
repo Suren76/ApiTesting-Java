@@ -1,5 +1,5 @@
 ### my ###
-.gitignore
+.idea
 
 
 target/
@@ -42,3 +42,4 @@ build/
 .DS_Store
 
 
+.gitignore
