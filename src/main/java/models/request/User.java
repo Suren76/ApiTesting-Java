@@ -2,6 +2,8 @@ package models.request;
 
 import models.BaseModel;
 
+import java.util.Map;
+
 public class User extends BaseModel {
     private String name;
     private String gender;
@@ -82,6 +84,22 @@ public class User extends BaseModel {
         result = 31 * result + status.hashCode();
         result = 31 * result + email.hashCode();
         return result;
+    }
+
+    public int a () {
+
+        return 0;
+    }
+
+
+    @Override
+    public Map<String, Object> getMap() {
+        return Map.of(
+                "name", name,
+                "gender", gender,
+                "status", status,
+                "email", email
+        );
     }
 }
 

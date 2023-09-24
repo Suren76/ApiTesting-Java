@@ -5,14 +5,13 @@ import io.restassured.RestAssured;
 import io.restassured.common.mapper.TypeRef;
 
 import java.util.List;
+import java.util.Map;
 
 public class ReqresIn extends BaseService {
     private static final String basePath = "/public/v2";
 
     public static void setup(){
-        BaseService.setup();
         spec.basePath(basePath);
-
         RestAssured.requestSpecification = spec;
     }
 
@@ -35,13 +34,11 @@ public class ReqresIn extends BaseService {
 
 
     public models.response.User userPut(models.response.User user){
-        return put("/user/%s".formatted(user.getId()), user).
-                as(models.response.User.class);
+        return put("/users/%s".formatted(user.getId()), user).as(models.response.User.class);
     }
 
-    public models.response.User userPatch(String data, int id){
-        return patch("/users/%s".formatted(id), data).
-                as(models.response.User.class);
+    public models.response.User userPatch(Map<String, Object> data, int id){
+        return patch("/users/%s".formatted(id), data).as(models.response.User.class);
     }
 
     public void userDelete(int id){
